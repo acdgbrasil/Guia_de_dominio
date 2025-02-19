@@ -1,0 +1,31 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{caption}
+\usepackage{csquotes}
+\usepackage{footnote}
+\usepackage[backend=biber,style=numeric,citestyle=numeric-comp]{biblatex}
+\addbibresource{reference/references.bib}
+\geometry{margin=1in}
+
+% Define o diretório de imagens
+\graphicspath{{images/}}
+
+\begin{document}
+
+% Capa do documento
+\input{pages/capa}
+% Sessões do documento
+\input{pages/introducao}
+\newpage
+\input{pages/dominio}
+\newpage
+\input{pages/contexto_dominio}
+
+
+\printbibliography[heading=none]
+\end{document}

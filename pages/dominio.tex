@@ -1,0 +1,121 @@
+\section{Guia Rápido de DDD}
+
+% Este guia serve como referência prática para modelar um sistema utilizando Domain-Driven Design (DDD).
+% As perguntas abaixo ajudam a estruturar um modelo de DDD, mesmo sem experiência prévia.
+% NÃO É NECESSÁRIO RESPONDER TODAS AS PERGUNTAS! Cada empresa pode adaptar o documento às suas necessidades.
+
+% REFERÊNCIAS PRINCIPAIS PARA APROFUNDAMENTO:
+%  Implementando Domain-Driven Design - Vaughn Vernon
+%  Domain-Driven Design: Tackling Complexity in the Heart of Software - Eric Evans
+
+% ╰(*°▽°*)╯ SESSÕES ESSENCIAIS PARA UM DDD COMPLETO: ╰(*°▽°*)╯
+% - Entendendo o Domínio do Projeto
+% - Definição de Contextos e Fronteiras
+% - Modelagem do Domínio
+% - Estrutura de Objetos e Regras de Negócio
+% - Integração entre Sistemas e Comunicação entre Contextos
+
+% As demais seções são opcionais e dependem da complexidade do sistema.
+
+\subsection{Entendendo o Domínio do Projeto}
+% Esta seção ajuda a definir o problema central que o sistema resolve.
+% As perguntas garantem que o modelo de domínio tenha um propósito claro.
+
+\begin{itemize}
+    \item Qual é o problema central que o seu sistema resolve?
+    \item Quem são os principais usuários do sistema e quais problemas enfrentam?
+    \item Como este sistema se encaixa no fluxo de trabalho do negócio?
+    \item Existem soluções já utilizadas atualmente? Se sim, quais as limitações delas?
+    \item Quais são as operações mais críticas do sistema e por quê?
+    \item Se este sistema deixasse de existir amanhã, quais seriam as maiores dificuldades para a empresa?
+\end{itemize}
+
+\subsection{Definição de Contextos e Fronteiras}
+% Define os Contextos Delimitados do sistema. Essencial para evitar confusão conceitual entre diferentes partes do projeto.
+
+\begin{itemize}
+    \item Quais partes do sistema podem ser separadas como contextos independentes?
+    \item Como garantir que diferentes áreas do sistema não criem conflitos entre si?
+    \item O que define os limites entre os Contextos Delimitados do seu projeto?
+    \item Alguma equipe ou área de negócio específica é responsável por cada contexto?
+    \item Como esses contextos interagem entre si e com sistemas externos?
+    \item Algum contexto precisa compartilhar dados ou lógica com outro contexto?
+\end{itemize}
+
+\subsection{Subdomínios e Estratégia de Negócio}
+% Identifica o Core Domain e os subdomínios auxiliares. Essencial para saber o que deve ser priorizado no sistema.
+
+\begin{itemize}
+    \item Qual é o **Core Domain** (Domínio Principal) do seu sistema?
+    \item Existem funcionalidades secundárias que não fazem parte do Core Domain?
+    \item O sistema depende de algum serviço terceirizado ou integração externa?
+    \item O seu sistema pode ser dividido em múltiplos subdomínios? Se sim, quais?
+    \item Como os subdomínios se relacionam com o Core Domain?
+    \item Quais subdomínios precisam ser implementados primeiro para o sistema funcionar?
+\end{itemize}
+
+\subsection{Modelagem do Domínio}
+% Aqui definimos as Entidades do sistema e como elas interagem.
+% ESSENCIAL para um DDD funcional.
+
+\begin{itemize}
+    \item Quais são as entidades centrais do seu domínio?
+    \item Como essas entidades interagem entre si dentro do contexto do sistema?
+    \item Quais atributos e comportamentos são essenciais para cada entidade?
+    \item Existem regras de negócio que precisam ser validadas dentro das entidades?
+    \item Alguma entidade precisa garantir consistência de dados com outra?
+    \item Existem operações críticas que precisam de transações para garantir integridade?
+\end{itemize}
+
+\subsection{Estrutura de Objetos e Regras de Negócio}
+% Explica como estruturar os Agregados, Objetos de Valor e Serviços de Domínio.
+
+\begin{itemize}
+    \item Quais atributos ou comportamentos podem ser representados por Objetos de Valor?
+    \item Existem cálculos ou transformações que se repetem e podem ser encapsulados?
+    \item Algum conjunto de entidades deve ser tratado como uma única unidade lógica?
+    \item O que deve ser considerado na definição dos Agregados?
+    \item Como garantir que as regras de negócio sejam centralizadas e não espalhadas no código?
+    \item Alguma regra de negócio precisa ser compartilhada entre diferentes partes do sistema?
+\end{itemize}
+
+\subsection{Integração entre Sistemas e Comunicação entre Contextos}
+% ESSENCIAL para sistemas que precisam interagir com serviços externos.
+
+\begin{itemize}
+    \item Como o sistema se comunica com serviços externos ou sistemas legados?
+    \item Alguma parte do sistema precisa se proteger contra mudanças em sistemas externos?
+    \item Existe alguma regra de negócio que não pode ser comprometida por integrações externas?
+    \item Como garantir que a comunicação entre contextos não cause acoplamento excessivo?
+    \item Quando deve ser utilizada mensageria em vez de chamadas diretas entre contextos?
+    \item Como lidar com falhas na comunicação entre sistemas?
+\end{itemize}
+
+\subsection{Implementando DDD em Projetos Existentes}
+% Seção útil para empresas que querem migrar um sistema legado para DDD.
+
+\begin{itemize}
+    \item Quais são as maiores dificuldades do sistema atual que o DDD pode resolver?
+    \item Alguma parte do sistema pode ser separada como um novo contexto sem impactar o resto?
+    \item Como dividir a migração do sistema para DDD em pequenas etapas?
+    \item Existe alguma funcionalidade que pode ser usada como um piloto para testar a abordagem?
+    \item Como garantir que a transição para DDD não cause interrupções na operação do sistema?
+    \item O que fazer se o modelo de domínio precisar ser reformulado no meio do processo?
+\end{itemize}
+
+\subsection{Melhores Práticas para um Modelo Sustentável}
+% Estratégias para manter o modelo de domínio atualizado e funcional no longo prazo.
+
+\begin{itemize}
+    \item Como garantir que o modelo de domínio continue evoluindo sem perder consistência?
+    \item Como manter a comunicação entre equipe técnica e especialistas do negócio?
+    \item Quais são os sinais de que um modelo de domínio precisa ser ajustado?
+    \item Como evitar que a modelagem do domínio se torne desatualizada?
+    \item Quais estratégias ajudam a manter o código do domínio limpo e organizado?
+    \item Como documentar um modelo DDD de maneira eficiente sem burocracia excessiva?
+\end{itemize}
+
+% Esta seção serve como um guia prático de DDD. Não é necessário responder todas as perguntas, apenas as mais relevantes para o sistema.
+% Para mais informações, consulte:
+% Implementando Domain-Driven Design - Vaughn Vernon
+% Domain-Driven Design: Tackling Complexity in the Heart of Software - Eric Evans
